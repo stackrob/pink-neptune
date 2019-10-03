@@ -2,49 +2,55 @@
 new_page_extension: md
 auto_deploy: false
 admin_path: src/admin
-webhook_url: 'https://stg-api.stackbit.com/project/5d9598e8bebee7001ade7493/webhook/forestry'
+webhook_url: https://stg-api.stackbit.com/project/5d9598e8bebee7001ade7493/webhook/forestry
 sections:
-  - type: document
-    label: Site Data
-    path: src/_data/site.json
-    templates:
-      - site_data
-  - type: document
-    label: Navigation
-    path: src/_data/navigation.json
-    templates:
-      - navigation
-  - type: document
-    label: Theme Settings
-    path: src/_data/tokens.json
-    templates:
-      - settings
-  - type: document
-    label: Homepage
-    path: src/index.md
-    templates:
-      - home
-  - type: directory
-    path: src/pages
-    match: '**/*'
-    label: Pages
-    create: all
-    templates:
-      - page
-  - type: directory
-    path: src/posts
-    match: '**/*'
-    label: Posts
-    create: all
-    templates:
-      - post
-  - type: document
-    label: Posts Archive
-    path: src/archive.md
-    templates:
-      - archive
+- type: document
+  path: src/_data/site.json
+  label: Site Data
+  templates:
+  - site_data
+- type: document
+  path: src/_data/navigation.json
+  label: Navigation
+  templates:
+  - navigation
+- type: document
+  path: src/_data/tokens.json
+  label: Theme Settings
+  templates:
+  - settings
+- type: document
+  path: src/index.md
+  label: Homepage
+  templates:
+  - home
+- type: directory
+  path: src/pages
+  label: Pages
+  create: all
+  match: "**/*"
+  templates:
+  - page
+- type: directory
+  path: src/posts
+  label: Posts
+  create: all
+  match: "**/*"
+  templates:
+  - post
+- type: document
+  path: src/archive.md
+  label: Posts Archive
+  templates:
+  - archive
 upload_dir: src/images
-public_path: /images
+public_path: "/images"
 front_matter_path: ''
 use_front_matter_path: false
-file_template: ':filename:'
+file_template: ":filename:"
+build:
+  preview_output_directory: public
+  install_dependencies_command: npm install
+  preview_docker_image: node:10
+  mount_path: "/srv"
+  instant_preview_command: npm run forestry:preview
