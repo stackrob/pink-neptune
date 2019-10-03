@@ -1,0 +1,39 @@
+---
+label: Homepage
+is_partial: false
+fields:
+  - type: text
+    name: title
+    label: Title
+    config:
+      required: true
+  - type: text
+    name: metaTitle
+    label: SEO Meta Title
+  - type: text
+    name: metaDesc
+    label: SEO Meta Description
+  - type: file
+    name: socialImage
+    label: Social Image
+  - type: text
+    name: postsHeading
+    label: Post Feed Heading
+    default: Latest posts
+    config:
+      required: true
+  - type: text
+    name: archiveButtonText
+    label: Archive Link Text
+    default: See all posts
+    config:
+      required: true
+  - type: text
+    name: layout
+    label: Layout
+    hidden: true
+    default: home
+    config:
+      required: true
+pages:
+  - src/index.md

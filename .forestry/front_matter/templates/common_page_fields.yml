@@ -1,0 +1,19 @@
+---
+label: Common Page Fields
+hide_body: true
+is_partial: true
+fields:
+  - type: text
+    name: title
+    label: Title
+    config:
+      required: true
+  - type: text
+    name: metaTitle
+    label: SEO Meta Title
+  - type: text
+    name: metaDesc
+    label: SEO Meta Description
+  - type: file
+    name: socialImage
+    label: Social Image

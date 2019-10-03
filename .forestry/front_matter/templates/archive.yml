@@ -1,0 +1,27 @@
+---
+label: Posts Archive
+is_partial: false
+fields:
+  - type: text
+    name: title
+    label: Title
+    config:
+      required: true
+  - type: text
+    name: metaTitle
+    label: SEO Meta Title
+  - type: text
+    name: metaDesc
+    label: SEO Meta Description
+  - type: file
+    name: socialImage
+    label: Social Image
+  - type: text
+    name: layout
+    label: Layout
+    hidden: true
+    default: layouts/archive.njk
+    config:
+      required: true
+pages:
+  - src/archive.md

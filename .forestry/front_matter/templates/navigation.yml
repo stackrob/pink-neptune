@@ -1,0 +1,25 @@
+---
+label: Navigation
+hide_body: true
+is_partial: false
+fields:
+  - type: field_group_list
+    name: items
+    label: Items
+    config:
+      required: true
+      labelField: text
+    fields:
+      - type: text
+        name: text
+        label: Text
+        config:
+          required: true
+      - type: text
+        name: url
+        label: Url
+        config:
+          required: true
+      - type: boolean
+        name: external
+        label: Is url to external site?

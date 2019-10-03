@@ -1,0 +1,143 @@
+---
+label: Theme Settings
+hide_body: true
+is_partial: false
+fields:
+  - type: field_group
+    name: size-scale
+    label: Size Scale
+    config:
+      required: true
+    fields:
+      - type: text
+        name: base
+        label: Base Size
+        default: 1rem
+        config:
+          required: true
+      - type: text
+        name: '300'
+        label: 'Ratio: 300'
+        default: 0.8rem
+        config:
+          required: true
+      - type: text
+        name: '500'
+        label: 'Ratio: 500'
+        default: 1.25rem
+        config:
+          required: true
+      - type: text
+        name: '600'
+        label: 'Ratio: 600'
+        default: 1.56rem
+        config:
+          required: true
+      - type: text
+        name: '700'
+        label: 'Ratio: 700'
+        default: 1.95rem
+        config:
+          required: true
+      - type: text
+        name: '800'
+        label: 'Ratio: 800'
+        default: 2.44rem
+        config:
+          required: true
+      - type: text
+        name: '900'
+        label: 'Ratio: 900'
+        default: 3.05rem
+        config:
+          required: true
+      - type: text
+        name: max
+        label: Max Size
+        default: 4rem
+        config:
+          required: true
+  - type: field_group
+    name: colors
+    label: Colors
+    config:
+      required: true
+    fields:
+      - type: color
+        name: primary
+        label: Primary
+        default: '#173854'
+        config:
+          required: true
+          color_format: Hex
+      - type: color
+        name: primary-shade
+        label: Primary Shade (darker)
+        default: '#102538'
+        config:
+          required: true
+          color_format: Hex
+      - type: color
+        name: primary-glare
+        label: Primary Glare (lighter)
+        default: '#22547c'
+        config:
+          required: true
+          color_format: Hex
+      - type: color
+        name: highlight
+        label: Highlight
+        default: '#fedb8b'
+        config:
+          required: true
+          color_format: Hex
+      - type: color
+        name: light
+        label: Light
+        default: '#ffffff'
+        config:
+          required: true
+          color_format: Hex
+      - type: color
+        name: mid
+        label: Mid
+        default: '#cccccc'
+        config:
+          required: true
+          color_format: Hex
+      - type: color
+        name: dark
+        label: Dark
+        default: '#333333'
+        config:
+          required: true
+          color_format: Hex
+      - type: color
+        name: slate
+        label: Slate
+        default: '#404040'
+        config:
+          required: true
+          color_format: Hex
+  - type: field_group
+    name: fonts
+    label: Fonts
+    hidden: true
+    config:
+      required: true
+    fields:
+      - type: textarea
+        name: base
+        label: Base
+        default: >-
+          "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+          Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI
+          Symbol'"
+        config:
+          required: true
+      - type: textarea
+        name: serif
+        label: Serif
+        default: '"''Lora'', serif"'
+        config:
+          required: true

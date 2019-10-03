@@ -1,0 +1,3 @@
+[build]
+command = "./stackbit-build.sh"
+publish = "dist"

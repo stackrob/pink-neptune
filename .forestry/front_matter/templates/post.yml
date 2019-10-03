@@ -1,0 +1,40 @@
+---
+label: Posts
+is_partial: false
+fields:
+  - type: text
+    name: title
+    label: Title
+    config:
+      required: true
+  - type: text
+    name: metaTitle
+    label: SEO Meta Title
+  - type: text
+    name: metaDesc
+    label: SEO Meta Description
+  - type: file
+    name: socialImage
+    label: Social Image
+  - type: datetime
+    name: date
+    label: Publish Date
+    config:
+      required: true
+  - type: list
+    name: tags
+    label: Tags
+    config:
+      required: true
+  - type: text
+    name: layout
+    label: Layout
+    hidden: true
+    default: layouts/post.njk
+    config:
+      required: true
+pages:
+  - src/posts/a-post-with-code-samples.md
+  - src/posts/a-post-with-figures-and-video.md
+  - src/posts/a-scheduled-post.md
+  - src/posts/a-simple-post.md

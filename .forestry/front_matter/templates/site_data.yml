@@ -1,0 +1,51 @@
+---
+label: Site Data
+hide_body: true
+is_partial: false
+fields:
+  - type: text
+    name: name
+    label: Site Name
+    config:
+      required: true
+  - type: text
+    name: url
+    label: Site Url
+    config:
+      required: true
+  - type: text
+    name: authorName
+    label: Author Name
+    config:
+      required: true
+  - type: text
+    name: authorEmail
+    label: Author Email Address
+    config:
+      required: true
+  - type: text
+    name: authorHandle
+    label: Author Twitter Handle
+  - type: textarea
+    name: shortDesc
+    label: Footer Short Description
+    config:
+      required: true
+  - type: number
+    name: maxPostsPerPage
+    label: Maximum Posts Per Page
+    default: 5
+    config:
+      required: true
+  - type: boolean
+    name: showThemeCredit
+    label: Show Theme Credit
+    default: true
+    config:
+      required: true
+  - type: boolean
+    name: enableThirdPartyComments
+    label: Enable Third Party Comments Area
+    default: false
+    config:
+      required: true

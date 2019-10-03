@@ -1,0 +1,263 @@
+stackbitVersion: ~0.2.0
+ssgName: custom
+buildCommand: npm run production
+publishDir: dist
+staticDir: src
+uploadDir: images
+pagesDir: src
+pageLayoutKey: layout
+cmsConfig:
+  netlify:
+    addAdminPage: false
+models:
+  site_data:
+    type: data
+    label: Site Data
+    file: src/_data/site.json
+    fields:
+      - name: name
+        type: string
+        label: Site Name
+        required: true
+      - name: url
+        type: string
+        label: Site Url
+        required: true
+      - name: authorName
+        type: string
+        label: Author Name
+        required: true
+      - name: authorEmail
+        type: string
+        label: Author Email Address
+        required: true
+      - name: authorHandle
+        type: string
+        label: Author Twitter Handle
+      - name: shortDesc
+        type: text
+        label: Footer Short Description
+        required: true
+      - name: maxPostsPerPage
+        type: number
+        label: Maximum Posts Per Page
+        required: true
+        default: 5
+      - name: showThemeCredit
+        type: boolean
+        label: Show Theme Credit
+        required: true
+        default: true
+      - name: enableThirdPartyComments
+        type: boolean
+        label: Enable Third Party Comments Area
+        required: true
+        default: false
+  navigation:
+    type: data
+    label: Navigation
+    file: src/_data/navigation.json
+    fields:
+      - name: items
+        type: list
+        label: Items
+        required: true
+        items:
+          type: object
+          labelField: text
+          fields:
+            - name: text
+              type: string
+              label: Text
+              required: true
+            - name: url
+              type: string
+              label: Url
+              required: true
+            - name: external
+              type: boolean
+              label: Is url to external site?
+  settings:
+    type: data
+    label: Theme Settings
+    file: src/_data/tokens.json
+    fields:
+      - name: size-scale
+        type: object
+        label: Size Scale
+        required: true
+        fields:
+          - name: base
+            type: string
+            label: Base Size
+            required: true
+            default: 1rem
+          - name: '300'
+            type: string
+            label: 'Ratio: 300'
+            required: true
+            default: 0.8rem
+          - name: '500'
+            type: string
+            label: 'Ratio: 500'
+            required: true
+            default: 1.25rem
+          - name: '600'
+            type: string
+            label: 'Ratio: 600'
+            required: true
+            default: 1.56rem
+          - name: '700'
+            type: string
+            label: 'Ratio: 700'
+            required: true
+            default: 1.95rem
+          - name: '800'
+            type: string
+            label: 'Ratio: 800'
+            required: true
+            default: 2.44rem
+          - name: '900'
+            type: string
+            label: 'Ratio: 900'
+            required: true
+            default: 3.05rem
+          - name: max
+            type: string
+            label: Max Size
+            required: true
+            default: 4rem
+      - name: colors
+        type: object
+        label: Colors
+        required: true
+        fields:
+          - name: primary
+            type: color
+            label: Primary
+            required: true
+            default: '#173854'
+          - name: primary-shade
+            type: color
+            label: Primary Shade (darker)
+            required: true
+            default: '#102538'
+          - name: primary-glare
+            type: color
+            label: Primary Glare (lighter)
+            required: true
+            default: '#22547c'
+          - name: highlight
+            type: color
+            label: Highlight
+            required: true
+            default: '#fedb8b'
+          - name: light
+            type: color
+            label: Light
+            required: true
+            default: '#ffffff'
+          - name: mid
+            type: color
+            label: Mid
+            required: true
+            default: '#cccccc'
+          - name: dark
+            type: color
+            label: Dark
+            required: true
+            default: '#333333'
+          - name: slate
+            type: color
+            label: Slate
+            required: true
+            default: '#404040'
+      - name: fonts
+        type: object
+        label: Fonts
+        required: true
+        hidden: true
+        fields:
+          - name: base
+            type: text
+            label: Base
+            required: true
+            default: >-
+              "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+              Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe
+              UI Symbol'"
+          - name: serif
+            type: text
+            label: Serif
+            required: true
+            default: '"''Lora'', serif"'
+  home:
+    type: page
+    label: Homepage
+    layout: home
+    singleInstance: true
+    file: index.md
+    extends: common_page_fields
+    fields:
+      - name: postsHeading
+        type: string
+        label: Post Feed Heading
+        required: true
+        default: Latest posts
+      - name: archiveButtonText
+        type: string
+        label: Archive Link Text
+        required: true
+        default: See all posts
+  page:
+    type: page
+    label: Pages
+    layout: layouts/page.njk
+    folder: pages
+    extends: common_page_fields
+    fields:
+      - name: permalink
+        type: string
+        label: Permalink Override
+  post:
+    type: page
+    label: Posts
+    layout: layouts/post.njk
+    folder: posts
+    extends: common_page_fields
+    fields:
+      - name: date
+        type: datetime
+        label: Publish Date
+        required: true
+      - name: tags
+        type: list
+        label: Tags
+        required: true
+        items:
+          type: string
+  archive:
+    type: page
+    label: Posts Archive
+    layout: layouts/archive.njk
+    singleInstance: true
+    file: archive.md
+    extends: common_page_fields
+  common_page_fields:
+    type: object
+    label: Common Page Fields
+    description: This model is extended by other page models
+    fields:
+      - name: title
+        type: string
+        label: Title
+        required: true
+      - name: metaTitle
+        type: string
+        label: SEO Meta Title
+      - name: metaDesc
+        type: string
+        label: SEO Meta Description
+      - name: socialImage
+        type: image
+        label: Social Image

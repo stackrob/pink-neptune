@@ -1,0 +1,11 @@
+{
+    "name": "Hylia Starter Kit",
+    "url": "https://hylia.website",
+    "authorName": "Andy Bell",
+    "authorEmail": "me@andy-bell.design",
+    "authorHandle": "@andybelldesign",
+    "shortDesc": "Hylia is a lightweight Eleventy starter kit to help you to create your own blog or personal website.",
+    "maxPostsPerPage": 5,
+    "showThemeCredit": true,
+    "enableThirdPartyComments": false
+}
